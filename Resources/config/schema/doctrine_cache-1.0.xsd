@@ -104,6 +104,12 @@
 
     <xsd:complexType name="predis_parameters">
         <xsd:sequence>
+            <xsd:element name="servers" type="predis_server" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="predis_server">
+        <xsd:sequence>
             <xsd:any minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>

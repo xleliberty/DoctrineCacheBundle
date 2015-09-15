@@ -45,7 +45,7 @@ class PredisDefinition extends CacheDefinition
             return new Reference($config['client_id']);
         }
 
-        $parameters = $config['parameters'];
+        $servers = $config['parameters']['servers'];
 
         $options = null;
 
@@ -56,7 +56,7 @@ class PredisDefinition extends CacheDefinition
         $clientId    = sprintf('doctrine_cache.services.%s_predis.client', $name);
         $clientDef   = new Definition($clientClass);
 
-        $clientDef->addArgument($parameters);
+        $clientDef->addArgument($servers);
         $clientDef->addArgument($options);
         $clientDef->setPublic(false);
 
